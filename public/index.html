@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>Hello world</title>
+    <script src="/socket.io/socket.io.js"></script>
+</head>
+<body>
+HIII
+</body>
+<script>
+    var socket = io.connect('http://localhost:3000');
+    socket.on('MLUs/1/presence', function (data) {
+        console.log('MLUs/1/presence' + data);
+    });
+    socket.on('MLUs/1/data/tbus/0/07000001', function (data) {
+        console.log('MLUs/1/data/tbus/0/07000001' + data);
+    });
+</script>
+</html>
